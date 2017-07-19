@@ -16,6 +16,7 @@ var Contacts = require('./view/Contacts.vue')
 var Projects = require('./view/Projects.vue')
 var Blog = require('./view/Blog.vue')
 var Post = require('./view/Post.vue')
+var Json = require('./view/Json.vue')
 Vue.use(VueMaterial)
 Vue.use(VueResource)
 
@@ -40,6 +41,7 @@ const routera = new VueRouter({
     { path: '/projects', component: Projects },
     { path: '/blog', component: Blog },
     { path: '/post/:id', name: 'post', component: Hello },
+    { path: '/json', component: Json},
   ]})
 
 

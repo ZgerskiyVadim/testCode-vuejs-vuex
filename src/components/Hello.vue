@@ -1,40 +1,9 @@
 
         <template>
-
-       <div>
-
-        <div class="container">
-
-        
-     
-             
-        <div class="post" v-for="(post, index) in posts">
-        
-            <div class="main_cont">
-        <md-layout md-gutter>
-     
-                 <div class="vacancy_name"> {{post.name }} </div>
-  
-               <p > {{ post.body }} </p>
-              
-               
-               
-
-                
-          
-    
-    
-    
-  </md-layout>
-
-       
-          </div>
-          </div>
-         
-    </div>
-    </div>
-    </div>
-   
+<div>
+{{post.name}}
+{{currentPage}}
+</div> 
 </template>
 
 
@@ -43,49 +12,53 @@
     
     
     
+    
+    
+    
 
+import Pagin from './Pagination.vue'   
 export default {
         name: "Hello",
         props: [],
         data() {
             return {
                 posts: [],
-                currentPage: 1,
-                total: 2
-            
+                post: null,
+                name: null,
+                el: null,
+                x: 1
+
             }
         },
-        components: {
-            
-        },
+
         methods: {
 
 
             getAllPosts: function() {
-                var options = {
-                    params: {
-                        _limit: 1
- 
-                    }
-                }
- this.$http.get('https://jsonplaceholder.typicode.com/comments', options).then(function(response) {
+ this.$http.get('   https://jsonplaceholder.typicode.com/comments').then(function(response) {
                     console.log(response)
                     this.posts = response.data
+                    this.$route.params.id = this.x
+                    this.post = this.posts[this.x]
+
                     
                 }, function() {
 
                 })
             },            
-               
-
+             
         },
+    
+    lol: function() {
+        alert("cdsmkd")
+    },
+
+
 
 
         created: function() {
-            this.post = this.posts[postId]
-            this.getAllPosts()
-            var postId = this.$route.params.id
-            
+            this.getAllPosts() 
+           
             
             
           } 
@@ -471,3 +444,38 @@ export default {
     
 </style>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--.-->
+<!--  -->
+<!--                     console.log(response)
+                    this.posts = response.data
+                    var x = this.$route.params.id
+                    this.post = this.posts[x] -->
+<!--  -->
+<!--  -->
+<!--  -->

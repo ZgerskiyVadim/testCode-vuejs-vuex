@@ -7,7 +7,7 @@
     <div>
     
                  <div class="pagination">
-        <div class="pagination_left pag"   >
+        <div class="pagination_left pag">
             <a href="#" v-if="hasPrev()" @click="changePage(prevPage)"><i class="material-icons">navigate_before</i></a>
         </div>
  
@@ -169,7 +169,7 @@ export default {
         justify-content: center;
         display: flex;
         margin-left: auto;    
-width: 100%
+        width: 100%
         
 
     }
@@ -188,14 +188,14 @@ width: 100%
     .pagination_left {
         float: left;
         margin-right: auto;
-            margin-left: 50px;
+            margin-left: 40px;
     
     }
     .pagination_right {
         float: right;
         justify-content: flex-end;
         margin-left: auto;
-            margin-right: 60px;
+            margin-right: 50px;
         
 
        
