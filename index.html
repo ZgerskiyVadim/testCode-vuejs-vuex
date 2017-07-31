@@ -16,29 +16,8 @@
 
 
     <div id="app">
-        <header>
-            <div class="header">
-                <ul>
-                    <li>
-                        <router-link to="/">
-                            <p>Главная</p>
-                        </router-link>
-                    </li>
-                    <li>
-                        <router-link to="/contacts">
-                            <p>Контакты</p>
-                        </router-link>
-                    </li>
-                </ul>
-            </div>
-
-
-
-        </header>
-
+        <header-component></header-component>
         <router-view></router-view>
-
-
     </div>
 
     <script src="/dist/build.js"></script>
