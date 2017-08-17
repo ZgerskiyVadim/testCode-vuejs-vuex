@@ -14,6 +14,7 @@
             </div>
             <div id="confirm">
                 <button @click="updateUser(user)" id="buttonConfirm">Confirm settings</button>
+                <button @click="getAllVacancies" id="buttonConfirm">getAllVacancies</button>
             </div>
         </section>
     </div>
@@ -35,12 +36,15 @@
             updateUser(user){
                 console.log(user);
                 this.$store.dispatch('UpdateUser', user);
-            }
+            },
+          getAllVacancies(){
+              this.$store.dispatch('getAllVacancies');
+          }
         }
     }
 </script>
 
-<style>
+<style scoped>
     .divSettings {
         background: #58a3a3;
         height: 60vh;
